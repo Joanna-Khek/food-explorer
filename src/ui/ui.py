@@ -185,13 +185,14 @@ def display_title_cards(data: pd.DataFrame, category: str, area:str) -> None:
                 
 def show_wordcloud(data_filtered):
     #st.set_option('deprecation.showPyplotGlobalUse', False)
+    fig, ax = plt.subplots()
     wordcloud = WordCloud(colormap='Accent', width=800, 
                           height=500, 
                           min_font_size = 12,
                           stopwords=['nan', 'one']).generate(str(data_filtered.review_title_desc.values))
     plt.imshow(wordcloud)
     plt.axis("off")
-    st.pyplot()
+    st.pyplot(fig)
 
 def display_review_images(data_filtered):
     col1, col2, col3 = st.columns(3)
