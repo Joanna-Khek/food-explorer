@@ -9,7 +9,6 @@ from streamlit_card import card
 from st_aggrid import AgGrid, GridOptionsBuilder, ColumnsAutoSizeMode
 
 from streamlit_extras.switch_page_button import switch_page
-from configs import configs
 
 def set_page_config():
     st.set_page_config(
@@ -185,7 +184,7 @@ def display_title_cards(data: pd.DataFrame, category: str, area:str) -> None:
                     )
                 
 def show_wordcloud(data_filtered):
-    st.set_option('deprecation.showPyplotGlobalUse', False)
+    #st.set_option('deprecation.showPyplotGlobalUse', False)
     wordcloud = WordCloud(colormap='Accent', width=800, 
                           height=500, 
                           min_font_size = 12,
